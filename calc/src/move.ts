@@ -2,7 +2,7 @@ import type * as I from './data/interface';
 import type {State} from './state';
 import {toID, extend} from './util';
 
-const SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Dark', 'Dragon'];
+const SPECIAL = ['Fire', 'Water', 'Grass', 'Electric', 'Ice', 'Psychic', 'Ghost', 'Dragon'];
 
 export class Move implements State.Move {
   gen: I.Generation;
