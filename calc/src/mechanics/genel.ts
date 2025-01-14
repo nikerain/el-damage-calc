@@ -1,4 +1,4 @@
-//this is basically a copy of gen3.ts with a few alterations
+//this is basically a copy of gen3.ts with a few alterations and changed function names
 
 import type {Generation} from '../data/interface';
 import {getItemBoostType} from '../items';
@@ -145,21 +145,21 @@ export function calculateEL(
     desc.hits = move.hits;
   }
 
-  let bp = calculateBasePowerADV(attacker, defender, move, desc);
+  let bp = calculateBasePowerEL(attacker, defender, move, desc);
 
   if (bp === 0) {
     return result;
   }
-  bp = calculateBPModsADV(attacker, move, desc, bp);
+  bp = calculateBPModsEL(attacker, move, desc, bp);
 
   const isCritical = move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor');
-  const at = calculateAttackADV(gen, attacker, defender, move, desc, isCritical);
-  const df = calculateDefenseADV(gen, defender, move, desc, isCritical);
+  const at = calculateAttackEL(gen, attacker, defender, move, desc, isCritical);
+  const df = calculateDefenseEL(gen, defender, move, desc, isCritical);
 
   const lv = attacker.level;
   let baseDamage = Math.floor(Math.floor((Math.floor((2 * lv) / 5 + 2) * at * bp) / df) / 50);
 
-  baseDamage = calculateFinalModsADV(baseDamage, attacker, move, field, desc, isCritical);
+  baseDamage = calculateFinalModsEL(baseDamage, attacker, move, field, desc, isCritical);
 
   baseDamage = Math.floor(baseDamage * type1Effectiveness);
   baseDamage = Math.floor(baseDamage * type2Effectiveness);
@@ -183,13 +183,13 @@ export function calculateEL(
     for (let times = 1; times < numAttacks; times++) {
       usedItems = checkMultihitBoost(gen, attacker, defender, move,
         field, desc, usedItems[0], usedItems[1]);
-      const newAt = calculateAttackADV(gen, attacker, defender, move, desc, isCritical);
-      let newBp = calculateBasePowerADV(attacker, defender, move, desc);
-      newBp = calculateBPModsADV(attacker, move, desc, newBp);
+      const newAt = calculateAttackEL(gen, attacker, defender, move, desc, isCritical);
+      let newBp = calculateBasePowerEL(attacker, defender, move, desc);
+      newBp = calculateBPModsEL(attacker, move, desc, newBp);
       let newBaseDmg = Math.floor(
         Math.floor((Math.floor((2 * lv) / 5 + 2) * newAt * newBp) / df) / 50
       );
-      newBaseDmg = calculateFinalModsADV(newBaseDmg, attacker, move, field, desc, isCritical);
+      newBaseDmg = calculateFinalModsEL(newBaseDmg, attacker, move, field, desc, isCritical);
       newBaseDmg = Math.floor(baseDamage * type1Effectiveness);
       newBaseDmg = Math.floor(baseDamage * type2Effectiveness);
 
@@ -207,7 +207,7 @@ export function calculateEL(
   return result;
 }
 
-export function calculateBasePowerADV(
+export function calculateBasePowerEL(
   attacker: Pokemon,
   defender: Pokemon,
   move: Move,
@@ -253,7 +253,7 @@ export function calculateBasePowerADV(
   return bp;
 }
 
-export function calculateBPModsADV(
+export function calculateBPModsEL(
   attacker: Pokemon,
   move: Move,
   desc: RawDesc,
@@ -271,7 +271,7 @@ export function calculateBPModsADV(
   return basePower;
 }
 
-export function calculateAttackADV(
+export function calculateAttackEL(
   gen: Generation,
   attacker: Pokemon,
   defender: Pokemon,
@@ -332,7 +332,7 @@ export function calculateAttackADV(
   return at;
 }
 
-export function calculateDefenseADV(
+export function calculateDefenseEL(
   gen: Generation,
   defender: Pokemon,
   move: Move,
