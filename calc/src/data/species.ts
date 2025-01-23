@@ -2759,7 +2759,7 @@ const EL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Snorunt: {bs: {hp: 60, at: 60, df: 60, sp: 60, sa: 60, sd: 60}},
   Glalie: {
     bs: {hp: 85, at: 85, df: 85, sp: 85, sa: 85, sd: 85},
-    abilities: {0, 'Levitate'}
+    abilities: {0: 'Levitate'}
   },
   Lunatone: {bs: {hp: 90, at: 65}},
   Solrock: {bs: {sp: 90, sa: 65}},
@@ -2776,7 +2776,7 @@ const EL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Swalot: {bs: {hp: 115}},
   Tropius: {
     bs: {hp: 120, at: 65, sa: 85},
-    abilities: {0, 'Thick Fat'}
+    abilities: {0: 'Thick Fat'}
   },
   Loudred: {bs: {at: 76}},
   Exploud: {bs: {hp: 114, at: 101, df: 73, sd: 73}},
@@ -2790,7 +2790,7 @@ const EL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Chimecho: {bs: {hp: 75, df: 80, sd: 90}},
 };
 
-const EL: {[name:string]: SpeciesData} = extend{true, {}, ADV, EL_PATCH};
+const EL: {[name: string]: SpeciesData} = extend(true, {}, ADV, EL_PATCH);
 
 const DPP_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Aipom: {nfe: true},
@@ -10140,7 +10140,7 @@ const SV_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
 
 const SV: {[name: string]: SpeciesData} = extend(true, {}, SS, SV_PATCH, PLA_PATCH);
 
-export const SPECIES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
+export const SPECIES = [{}, RBY, GSC, EL, DPP, BW, XY, SM, SS, SV];
 
 export class Species implements I.Species {
   private readonly gen: I.GenerationNum;

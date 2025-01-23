@@ -78,6 +78,7 @@ bundled += bundler.read('mechanics/gen789.js', 7, 1);
 bundled += bundler.read('mechanics/gen56.js', 7, 1);
 bundled += bundler.read('mechanics/gen4.js', 31, 1);
 // These don't require 'util', so 'mechanics/util' gets the util_1 name.
+bundled += bundler.read('mechanics/genel.js', 31, 1).replace(/util_1/g, 'util_2');
 bundled += bundler.read('mechanics/gen3.js', 31, 1).replace(/util_1/g, 'util_2');
 bundled += bundler.read('mechanics/gen12.js', 31, 1).replace(/util_1/g, 'util_2');
 bundled += `

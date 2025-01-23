@@ -5,7 +5,7 @@ import type {Pokemon} from './pokemon';
 import type {Result} from './result';
 
 import {calculateRBYGSC} from './mechanics/gen12';
-import {calculateADV} from './mechanics/gen3';
+import {calculateEL} from './mechanics/genel';
 import {calculateDPP} from './mechanics/gen4';
 import {calculateBWXY} from './mechanics/gen56';
 import {calculateSMSSSV} from './mechanics/gen789';
@@ -14,7 +14,7 @@ const MECHANICS = [
   () => {},
   calculateRBYGSC,
   calculateRBYGSC,
-  calculateADV,
+  calculateEL,
   calculateDPP,
   calculateBWXY,
   calculateBWXY,

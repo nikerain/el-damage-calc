@@ -1298,7 +1298,7 @@ function calcStat(poke, StatID) {
 var GENERATION = {
 	'1': 1, 'rb': 1, 'rby': 1,
 	'2': 2, 'gs': 2, 'gsc': 2,
-	'3': 3, 'rs': 3, 'rse': 3, 'frlg': 3, 'adv': 3,
+	'3': 3, 'rs': 3, 'rse': 3, 'frlg': 3, 'adv': 3, 'el': 3,
 	'4': 4, 'dp': 4, 'dpp': 4, 'hgss': 4,
 	'5': 5, 'bw': 5, 'bw2': 5, 'b2w2': 5,
 	'6': 6, 'xy': 6, 'oras': 6,
@@ -1311,7 +1311,7 @@ var SETDEX = [
 	{},
 	typeof SETDEX_RBY === 'undefined' ? {} : SETDEX_RBY,
 	typeof SETDEX_GSC === 'undefined' ? {} : SETDEX_GSC,
-	typeof SETDEX_ADV === 'undefined' ? {} : SETDEX_ADV,
+	typeof SETDEX_EL === 'undefined' ? {} : SETDEX_EL,
 	typeof SETDEX_DPP === 'undefined' ? {} : SETDEX_DPP,
 	typeof SETDEX_BW === 'undefined' ? {} : SETDEX_BW,
 	typeof SETDEX_XY === 'undefined' ? {} : SETDEX_XY,

@@ -1,4 +1,4 @@
-var SETDEX_ADV = {
+var SETDEX_EL = {
   "Abra": {
     "Battle Frontier": {"item":"Twisted Spoon","nature":"Lonely","evs":{"hp":255,"sp":255},"moves":["Mimic","Metronome","Flash","Seismic Toss"]}
   },

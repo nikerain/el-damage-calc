@@ -1,6 +1,4 @@
-//this is basically a copy of gen3.ts with a few alterations and changed function names
-
-import type {Generation} from '../data/interface';
+import type {Generation} from '../data/interface'; //this is basically a copy of gen3.ts with a few alterations and changed function names
 import {getItemBoostType} from '../items';
 import type {RawDesc} from '../desc';
 import type {Pokemon} from '../pokemon';
@@ -154,7 +152,7 @@ export function calculateEL(
 
   const isCritical = move.isCrit && !defender.hasAbility('Battle Armor', 'Shell Armor');
   const at = calculateAttackEL(gen, attacker, defender, move, desc, isCritical);
-  const df = calculateDefenseEL(gen, defender, move, desc, isCritical);
+  const df = calculateDefenseEL(gen, defender, move, field, desc, isCritical);
 
   const lv = attacker.level;
   let baseDamage = Math.floor(Math.floor((Math.floor((2 * lv) / 5 + 2) * at * bp) / df) / 50);
@@ -314,6 +312,9 @@ export function calculateAttackEL(
   if (defender.hasAbility('Thick Fat') && (move.hasType('Fire', 'Ice'))) {
     at = Math.floor(at / 2);
     desc.defenderAbility = defender.ability;
+  } else if (defender.hasAbility('Magma Armor') && move.hasType('Water')) {
+    at = Math.floor(at / 8);
+    desc.defenderAbility = defender.ability;
   }
 
   if ((isPhysical &&
@@ -336,6 +337,7 @@ export function calculateDefenseEL(
   gen: Generation,
   defender: Pokemon,
   move: Move,
+  field: Field,
   desc: RawDesc,
   isCritical = false
 ) {
@@ -359,6 +361,14 @@ export function calculateDefenseEL(
   if (isPhysical && defender.hasAbility('Marvel Scale') && defender.status) {
     df = Math.floor(df * 1.5);
     desc.defenderAbility = defender.ability;
+  }
+
+  if (
+    (field.hasWeather('Sand') && (defender.hasType('Rock', 'Ground', 'Steel') || defender.hasAbility('Sand Veil')) && !isPhysical) ||
+    (field.hasWeather('Hail') && defender.hasType('Ice') && isPhysical)
+  ) {
+    df = Math.floor(df * 1.5);
+    desc.weather = field.weather;
   }
 
   if (move.named('Explosion', 'Self-Destruct')) {
