@@ -76,7 +76,8 @@ var bounds = {
 	"evs": [0, 252],
 	"ivs": [0, 31],
 	"dvs": [0, 15],
-	"move-bp": [0, 65535]
+	"move-bp": [0, 65535],
+	"ivtier": [0, 31]
 };
 for (var bounded in bounds) {
 	attachValidation(bounded, bounds[bounded][0], bounds[bounded][1]);
@@ -177,6 +178,13 @@ $(".sl .dvs").keyup(function () {
 	calcStat(poke, 'sl');
 	poke.find(".hp .dvs").val(getHPDVs(poke));
 	calcHP(poke);
+});
+$(".ivtier").bind("keyup change", function () {
+	var poke = $(this).closest(".poke-info");
+	for (var i = 0; i < LEGACY_STATS[gen].length; i++) {
+		poke.find("." + LEGACY_STATS[gen][i] + " .ivs").val($(this).val());
+	}
+	calcStats(poke);
 });
 
 function getForcedTeraType(pokemonName) {
