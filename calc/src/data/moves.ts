@@ -616,7 +616,7 @@ const EL_PATCH: {[name: string]: DeepPartial<MoveData>} = {
   'Shadow Punch': {bp: 80},
   'Rock Slide': {bp: 80},
   Dig: {bp: 70},
-  'Mud Slap': {bp: 30},
+  'Mud-Slap': {bp: 30},
   'Sand Tomb': {bp: 35},
   Bubble: {bp: 30},
   Crabhammer: {bp: 110},
