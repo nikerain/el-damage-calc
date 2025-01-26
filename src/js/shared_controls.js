@@ -1401,7 +1401,7 @@ var gen, genWasChanged, notation, pokedex, setdex, randdex, typeChart, moves, ab
 
 $(".gen").change(function () {
 	/*eslint-disable */
-	gen = ~~$(this).val() || 9;
+	gen = 3;
 	GENERATION = calc.Generations.get(gen);
 	genWasChanged = true;
 	/* eslint-enable */
@@ -1747,8 +1747,7 @@ function loadCustomList(id) {
 }
 
 $(document).ready(function () {
-
-
+	/*eslint-disable */
 	gen = 3;
 	GENERATION = calc.Generations.get(gen);
 	genWasChanged = true;
@@ -1765,6 +1764,22 @@ $(document).ready(function () {
 	clearField();
 	$("#importedSets").prop("checked", false);
 	loadDefaultLists();
+	$(".gen-specific.g" + gen).show();
+	$(".gen-specific").not(".g" + gen).hide();
+	var typeOptions = getSelectOptions(Object.keys(typeChart));
+	$("select.type1, select.move-type").find("option").remove().end().append(typeOptions);
+	$("select.teraType").find("option").remove().end().append(getSelectOptions(Object.keys(typeChart).slice(1)));
+	$("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
+	var moveOptions = getSelectOptions(Object.keys(moves), true);
+	$("select.move-selector").find("option").remove().end().append(moveOptions);
+	var abilityOptions = getSelectOptions(abilities, true);
+	$("select.ability").find("option").remove().end().append("<option value=\"\">(other)</option>" + abilityOptions);
+	var itemOptions = getSelectOptions(items, true);
+	$("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
+
+	$(".set-selector").val(getFirstValidSetOption().id);
+	$(".set-selector").change();
+
 	$(".gen-specific.g" + gen).show();
 	$(".gen-specific").not(".g" + gen).hide();
 	var typeOptions = getSelectOptions(Object.keys(typeChart));

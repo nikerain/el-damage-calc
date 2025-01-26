@@ -106,7 +106,8 @@ describe('Generations', () => {
     }
   });
 });
-*/ // Mate, I cannot compare EL pokemon to @pkmn/dex ones. If someone wants to write the import of stats from EL's github page, be my guest.
+*/ // Mate, I cannot compare EL pokemon to @pkmn/dex ones.
+// If someone wants to write the import of stats from EL's github page, be my guest.
 
 describe('Adaptable', () => {
   test('usage', () => {

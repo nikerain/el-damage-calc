@@ -75,13 +75,13 @@ function performCalculations() {
 				if (mode === "one-vs-all") {
 					attacker = createPokemon(pokeInfo);
 					defender = createPokemon(setOptions[i].id);
-					for (const stat in defender.ivs) {
+					for (var stat in defender.ivs) {
 						defender.ivs[stat] = theirIVs;
 					}
 				} else {
 					attacker = createPokemon(setOptions[i].id);
 					defender = createPokemon(pokeInfo);
-					for (const stat in attacker.ivs) {
+					for (var stat in attacker.ivs) {
 						attacker.ivs[stat] = theirIVs;
 					}
 					field.swap();
@@ -135,8 +135,8 @@ function inSelectedTiers(bfid) {
 	var selectedTiers = $('.tiers input:checked').map(function () {
 		return this.id;
 	}).get();
-	for (const tier of selectedTiers) {
-		switch(tier) {
+	for (let tier of selectedTiers) {
+		switch (tier) {
 		case "bf-all":
 			if (0 <= bfid <= 926) {
 				return true;
@@ -348,23 +348,23 @@ $(".tiers label").mouseup(function () {
 });
 
 $(".tiers input[type='checkbox']").change(function () {
-	
+
 	var id = $(this).attr("id");
 
-	if($(this).hasClass("pick-all")) {
-		$(this).closest(".btn-row").find("input[type='checkbox']").prop("checked", $(this).prop("checked"));	
+	if ($(this).hasClass("pick-all")) {
+		$(this).closest(".btn-row").find("input[type='checkbox']").prop("checked", $(this).prop("checked"));
 	}
 
-	if($(this).prop("checked")) {
+	if ($(this).prop("checked")) {
 		$(this).closest(".tiers").find("input[type='checkbox']").not($(this).closest(".btn-row").find("input[type='checkbox']")).prop("checked", false);
-		if(startsWith(id, "fifty") && $('.level').val() !== "50") {
+		if (startsWith(id, "fifty") && $('.level').val() !== "50") {
 			setLevel("50");
 		}
-		if(startsWith(id, "open") && $('.level').val() !== "100") {
+		if (startsWith(id, "open") && $('.level').val() !== "100") {
 			setLevel("100");
 		}
 	} else {
-		if(!($(this).hasClass("pick-all"))) {
+		if (!($(this).hasClass("pick-all"))) {
 			$(this).closest(".btn-row").find("input[type='checkbox'].pick-all").prop("checked", false);
 		}
 	}

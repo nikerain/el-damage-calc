@@ -2752,14 +2752,14 @@ const EL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Makuhita: {bs: {hp: 82, df: 40, sd: 40}},
   Camerupt: {
     bs: {hp: 90, at: 105, sp: 30, sa: 110},
-    abilities: {0: 'Flame Body'}
+    abilities: {0: 'Flame Body'},
   },
   Cacnea: {bs: {df: 50, sp: 25}},
   Cacturne: {bs: {hp: 100, at: 90, df: 90, sp: 35}},
   Snorunt: {bs: {hp: 60, at: 60, df: 60, sp: 60, sa: 60, sd: 60}},
   Glalie: {
     bs: {hp: 85, at: 85, df: 85, sp: 85, sa: 85, sd: 85},
-    abilities: {0: 'Levitate'}
+    abilities: {0: 'Levitate'},
   },
   Lunatone: {bs: {hp: 90, at: 65}},
   Solrock: {bs: {sp: 90, sa: 65}},
@@ -2776,7 +2776,7 @@ const EL_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
   Swalot: {bs: {hp: 115}},
   Tropius: {
     bs: {hp: 120, at: 65, sa: 85},
-    abilities: {0: 'Thick Fat'}
+    abilities: {0: 'Thick Fat'},
   },
   Loudred: {bs: {at: 76}},
   Exploud: {bs: {hp: 114, at: 101, df: 73, sd: 73}},

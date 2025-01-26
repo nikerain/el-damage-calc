@@ -37,8 +37,8 @@ describe('calc', () => {
             gen < 3
               ? `Lvl 50 Mew ${move.name} vs. Vulpix: 50-50 (17.9 - 17.9%) -- guaranteed 6HKO`
               : gen > 3
-              ? `Lvl 50 Mew ${move.name} vs. 0 HP Vulpix: 50-50 (23 - 23%) -- guaranteed 5HKO`
-              : `Lvl 50 Mew ${move.name} vs. 0 HP Vulpix: 50-50 (21.6 - 21.6%) -- guaranteed 5HKO` // Vulpix has more hp in EL
+                ? `Lvl 50 Mew ${move.name} vs. 0 HP Vulpix: 50-50 (23 - 23%) -- guaranteed 5HKO`
+                : `Lvl 50 Mew ${move.name} vs. 0 HP Vulpix: 50-50 (21.6 - 21.6%) -- guaranteed 5HKO` // Vulpix has more hp in EL
           );
         }
       });

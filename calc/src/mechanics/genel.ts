@@ -1,4 +1,5 @@
-import type {Generation} from '../data/interface'; //this is basically a copy of gen3.ts with a few alterations and changed function names
+// this is basically a copy of gen3.ts with a few alterations and changed function names
+import type {Generation} from '../data/interface';
 import {getItemBoostType} from '../items';
 import type {RawDesc} from '../desc';
 import type {Pokemon} from '../pokemon';
@@ -364,7 +365,8 @@ export function calculateDefenseEL(
   }
 
   if (
-    (field.hasWeather('Sand') && (defender.hasType('Rock', 'Ground', 'Steel') || defender.hasAbility('Sand Veil')) && !isPhysical) ||
+    (field.hasWeather('Sand') && (defender.hasType('Rock', 'Ground', 'Steel') ||
+      defender.hasAbility('Sand Veil')) && !isPhysical) ||
     (field.hasWeather('Hail') && defender.hasType('Ice') && isPhysical)
   ) {
     df = Math.floor(df * 1.5);
