@@ -740,7 +740,7 @@ var SETDEX_ADV = {
     "NU Suicide Rain Lead": {"ability":"Static","item":"Silk Scarf","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Rain Dance","Thunder","Light Screen","Explosion"]},
     "LC Offensive": {"level":5,"ability":"Static","item":"Sitrus Berry","nature":"Timid","ivs":{"at":30,"sa":30},"evs":{"hp":116,"df":36,"sa":160,"sp":196},"moves":["Thunderbolt","Hidden Power Grass","Thief","Explosion"]},
     "ZU Offensive": {"ability":"Static","item":"Petaya Berry","nature":"Naive","ivs":{"hp":30,"df":30},"evs":{"at":4,"sa":252,"sp":252},"moves":["Thunderbolt","Hidden Power Ice","Explosion","Substitute"]},
-    "ZU Lead": {"ability":"Static","item":"Silk Scarf","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Rain Dance","Explosion","Thunder","Taunt"]}
+    "ZU Weather Lead": {"ability":"Static","item":"Silk Scarf","nature":"Naive","evs":{"at":252,"sa":4,"sp":252},"moves":["Rain Dance","Explosion","Thunder","Taunt"]}
   },
   "Exeggcute": {
     "LC Sunny Day Sweeper": {"level":5,"ability":"Chlorophyll","item":"Sitrus Berry","nature":"Mild","evs":{"hp":36,"at":36,"df":36,"sa":196,"sd":156,"sp":36},"moves":["Explosion","Sunny Day","Solar Beam","Psychic"]}
@@ -1040,9 +1040,8 @@ var SETDEX_ADV = {
     "NU Showdown Usage": {"ability":"Serene Grace","item":"Leftovers","nature":"Sassy","ivs":{"at":30,"sa":30},"evs":{"hp":64,"sa":192,"sd":252},"moves":["Body Slam","Headbutt","Fire Blast","Hidden Power Grass"]}
   },
   "Gligar": {
-    "UU Swords Dance": {"ability":"Hyper Cutter","item":"Leftovers","nature":"Adamant","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Hidden Power Flying","Iron Tail","Swords Dance"]},
-    "UU Choice Band": {"ability":"Hyper Cutter","item":"Choice Band","nature":"Adamant","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":4,"at":252,"sp":252},"moves":["Earthquake","Hidden Power Flying","Quick Attack","Iron Tail"]},
-    "UU Swords Dance + Salac": {"ability":"Hyper Cutter","item":"Salac Berry","nature":"Adamant","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"hp":60,"at":252,"sp":196},"moves":["Earthquake","Swords Dance","Hidden Power Flying","Substitute"]}
+    "UU Swords Dance": {"ability":"Hyper Cutter","item":"Leftovers","nature":"Jolly","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Swords Dance","Earthquake","Hidden Power Flying","Quick Attack"]},
+    "UU Choice Band": {"ability":"Hyper Cutter","item":"Choice Band","nature":"Adamant","ivs":{"hp":30,"at":30,"df":30,"sa":30,"sd":30},"evs":{"at":252,"sd":4,"sp":252},"moves":["Earthquake","Hidden Power Flying","Iron Tail","Quick Attack"]}
   },
   "Steelix": {
     "OU Standard Wall": {"ability":"Sturdy","item":"Leftovers","nature":"Impish","evs":{"hp":252,"at":36,"sd":220},"moves":["Earthquake","Toxic","Roar","Rest"]},

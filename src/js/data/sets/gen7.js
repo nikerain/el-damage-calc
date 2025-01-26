@@ -549,7 +549,8 @@ var SETDEX_SM = {
     "Battle Spot Doubles Showdown Usage": {"level":50,"ability":"Friend Guard","item":"Eviolite","nature":"Sassy","evs":{"hp":156,"df":156,"sd":196},"moves":["Protect","Follow Me","Moonblast","Helping Hand"]}
   },
   "Clefable": {
-    "OU Defensive Magic Guard": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Moonblast","Soft-Boiled","Calm Mind"]},
+    "OU Utility": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Stealth Rock","Moonblast","Soft-Boiled","Thunder Wave"]},
+    "OU Defensive Calm Mind": {"ability":"Magic Guard","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Calm Mind","Moonblast","Thunder","Soft-Boiled"]},
     "OU Life Orb": {"ability":"Magic Guard","item":"Life Orb","nature":"Modest","evs":{"hp":80,"sa":252,"sp":176},"moves":["Moonblast","Thunderbolt","Fire Blast","Soft-Boiled"]},
     "OU Unaware": {"ability":"Unaware","item":"Leftovers","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Moonblast","Calm Mind","Wish","Protect"]},
     "Battle Spot Singles Booster": {"level":50,"ability":"Magic Guard","item":"Kee Berry","nature":"Bold","evs":{"hp":252,"df":252,"sd":4},"moves":["Minimize","Calm Mind","Moonlight","Moonblast"]},
@@ -4307,9 +4308,8 @@ var SETDEX_SM = {
     "Monotype Trick Room Attacker (Ghost)": {"ability":"Magician","item":"Life Orb","nature":"Quiet","evs":{"hp":252,"sa":252,"sd":4},"moves":["Trick Room","Psychic","Shadow Ball","Focus Blast"]}
   },
   "Hoopa-Unbound": {
-    "OU Choice Band": {"ability":"Magician","item":"Choice Band","nature":"Jolly","evs":{"hp":32,"at":224,"sp":252},"moves":["Hyperspace Fury","Gunk Shot","Fire Punch","Drain Punch"]},
+    "OU Choice Band": {"ability":"Magician","item":"Choice Band","nature":"Adamant","evs":{"at":252,"sd":4,"sp":252},"moves":["Hyperspace Fury","Zen Headbutt","Gunk Shot","Fire Punch"]},
     "OU Nasty Plot": {"ability":"Magician","item":"Fightinium Z","nature":"Timid","evs":{"hp":32,"sa":224,"sp":252},"moves":["Nasty Plot","Dark Pulse","Psychic","Focus Blast"]},
-    "OU Choice Specs": {"ability":"Magician","item":"Choice Specs","nature":"Timid","evs":{"hp":32,"sa":224,"sp":252},"moves":["Dark Pulse","Psyshock","Focus Blast","Trick"]},
     "Doubles OU Offensive Trick Room": {"ability":"Magician","item":"Sitrus Berry","nature":"Brave","evs":{"hp":192,"at":212,"df":104},"moves":["Hyperspace Fury","Hyperspace Hole","Trick Room","Protect"]},
     "1v1 Bulky Choice Band": {"ability":"Magician","item":"Choice Band","nature":"Adamant","evs":{"hp":196,"at":112,"df":36,"sp":164},"moves":["Hyperspace Fury","Gunk Shot","Zen Headbutt","Fire Punch"]},
     "1v1 Bulky Choice Specs": {"ability":"Magician","item":"Choice Specs","nature":"Bold","evs":{"hp":252,"df":252,"sa":4},"moves":["Dark Pulse","Thunderbolt","Psychic","Hidden Power Ice"]},
