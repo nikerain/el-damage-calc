@@ -36,7 +36,9 @@ describe('calc', () => {
           expect(result.desc()).toBe(
             gen < 3
               ? `Lvl 50 Mew ${move.name} vs. Vulpix: 50-50 (17.9 - 17.9%) -- guaranteed 6HKO`
-              : `Lvl 50 Mew ${move.name} vs. 0 HP Vulpix: 50-50 (23 - 23%) -- guaranteed 5HKO`
+              : gen > 3
+              ? `Lvl 50 Mew ${move.name} vs. 0 HP Vulpix: 50-50 (23 - 23%) -- guaranteed 5HKO`
+              : `Lvl 50 Mew ${move.name} vs. 0 HP Vulpix: 50-50 (21.6 - 21.6%) -- guaranteed 5HKO` // Vulpix has more hp in EL
           );
         }
       });
@@ -45,7 +47,7 @@ describe('calc', () => {
     tests('Comet Punch', ({gen, calculate, Pokemon, Move}) => {
       expect(calculate(Pokemon('Snorlax'), Pokemon('Vulpix'), Move('Comet Punch'))).toMatch(gen, {
         1: {range: [108, 129], desc: 'Snorlax Comet Punch (3 hits) vs. Vulpix', result: '(38.7 - 46.2%) -- approx. 3HKO'},
-        3: {range: [132, 156], desc: '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix', result: '(60.8 - 71.8%) -- approx. 2HKO'},
+        3: {range: [183, 216], desc: '0 Atk Snorlax Comet Punch (3 hits) vs. 0 HP / 0 Def Vulpix', result: '(79.2 - 93.5%) -- approx. 2HKO'}, // Comet Punch was buffed in EL
         4: {range: [129, 156], result: '(59.4 - 71.8%) -- approx. 2HKO'},
       });
     });
@@ -88,10 +90,15 @@ describe('calc', () => {
           expect(result.desc()).toBe(
             'Mew Explosion vs. Vulpix on a critical hit: 799-939 (286.3 - 336.5%) -- guaranteed OHKO'
           );
-        } else if (gen < 5 && gen > 2) {
+        } else if (gen < 5 && gen > 2 && gen !== 3) {
           expect(result.range()).toEqual([729, 858]);
           expect(result.desc()).toBe(
             '0 Atk burned Mew Explosion vs. 0 HP / 0 Def Vulpix on a critical hit: 729-858 (335.9 - 395.3%) -- guaranteed OHKO'
+          );
+        } else if (gen === 3) {
+          expect(result.range()).toEqual([729, 858]);
+          expect(result.desc()).toBe(
+            '0 Atk burned Mew Explosion vs. 0 HP / 0 Def Vulpix on a critical hit: 729-858 (315.5 - 371.4%) -- guaranteed OHKO' // Vulpix has more hp in EL
           );
         } else if (gen === 5) {
           expect(result.range()).toEqual([364, 429]);
@@ -134,21 +141,21 @@ describe('calc', () => {
         const weathers = [
           {
             weather: 'Sun', type: 'Fire', damage: {
-              adv: {range: [346, 408], desc: '(149.7 - 176.6%) -- guaranteed OHKO'},
+              el: {range: [408, 480], desc: '(176.6 - 207.7%) -- guaranteed OHKO'},
               dpp: {range: [342, 404], desc: '(148 - 174.8%) -- guaranteed OHKO'},
               modern: {range: [344, 408], desc: '(148.9 - 176.6%) -- guaranteed OHKO'},
             },
           },
           {
             weather: 'Rain', type: 'Water', damage: {
-              adv: {range: [86, 102], desc: '(37.2 - 44.1%) -- guaranteed 3HKO'},
+              el: {range: [102, 120], desc: '(44.1 - 51.9%) -- 13.3% chance to 2HKO'},
               dpp: {range: [85, 101], desc: '(36.7 - 43.7%) -- guaranteed 3HKO'},
               modern: {range: [86, 102], desc: '(37.2 - 44.1%) -- guaranteed 3HKO'},
             },
           },
           {
             weather: 'Sand', type: 'Rock', damage: {
-              adv: {
+              el: {
                 range: [96, 114],
                 desc: '(41.5 - 49.3%) -- 82.4% chance to 2HKO after sandstorm damage',
               },
@@ -164,9 +171,9 @@ describe('calc', () => {
           },
           {
             weather: 'Hail', type: 'Ice', damage: {
-              adv: {
-                range: [234, 276],
-                desc: '(101.2 - 119.4%) -- guaranteed OHKO',
+              el: {
+                range: [275, 324],
+                desc: '(119 - 140.2%) -- guaranteed OHKO',
               },
               dpp: {
                 range: [230, 272],
@@ -181,7 +188,7 @@ describe('calc', () => {
         ];
 
         for (const {weather, type, damage} of weathers) {
-          const dmg = gen === 3 ? damage.adv : gen === 4 ? damage.dpp : damage.modern;
+          const dmg = gen === 3 ? damage.el : gen === 4 ? damage.dpp : damage.modern;
           const [atk, def] = gen === 3 && type === 'Rock' ? ['Atk', 'Def'] : ['SpA', 'SpD'];
 
           const result = calculate(
@@ -192,7 +199,7 @@ describe('calc', () => {
           );
           expect(result.range()).toEqual(dmg.range);
           expect(result.desc()).toBe(
-            `0 ${atk} Castform Weather Ball (100 BP ${type}) vs. 0 HP / 0 ${def} Bulbasaur in ${weather}: ${dmg.range[0]}-${dmg.range[1]} ${dmg.desc}`
+            `0 ${atk} Castform Weather Ball (100 BP ${type}) vs. 0 HP / 0 ${def} Bulbasaur in ${weather}: ${dmg.range[0]}-${dmg.range[1]} ${dmg.desc}` // Castform has more SpA in EL
           );
         }
       });
@@ -903,7 +910,7 @@ describe('calc', () => {
         let result = calculate(blastoise, cacturne, surf);
         expect(result.range()).toEqual([88, 104]);
         expect(result.desc()).toBe(
-          '252 SpA Blastoise Surf vs. 0 HP / 0 SpD Cacturne: 88-104 (31.3 - 37%) -- 76.6% chance to 3HKO'
+          '252 SpA Blastoise Surf vs. 0 HP / 0 SpD Cacturne: 88-104 (25.8 - 30.4%) -- guaranteed 4HKO' // Cacturne has more HP in EL
         );
 
         cacturne.ability = 'Water Absorb' as AbilityName;
