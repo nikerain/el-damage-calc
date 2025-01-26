@@ -135,7 +135,8 @@ function inSelectedTiers(bfid) {
 	var selectedTiers = $('.tiers input:checked').map(function () {
 		return this.id;
 	}).get();
-	for (let tier of selectedTiers) {
+	for (var j = 0; j < selectedTiers.length; j++) {
+		var tier = selectedTiers[j];
 		switch (tier) {
 		case "bf-all":
 			if (0 <= bfid <= 926) {
