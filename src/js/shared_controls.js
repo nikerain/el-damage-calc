@@ -1408,22 +1408,6 @@ $(".gen").change(function () {
 	/*eslint-disable */
 	gen = ~~$(this).val() || 9;
 	GENERATION = calc.Generations.get(gen);
-	var params = new URLSearchParams(window.location.search);
-	if (gen === 9) {
-		params.delete('gen');
-		params = '' + params;
-		if (window.history && window.history.replaceState) {
-			window.history.replaceState({}, document.title, window.location.pathname + (params.length ? '?' + params : ''));
-		}
-	} else {
-		params.set('gen', gen);
-		if (window.history && window.history.pushState) {
-			params.sort();
-			var path = window.location.pathname + '?' + params;
-			window.history.pushState({}, document.title, path);
-			gtag('config', 'UA-26211653-3', {'page_path': path});
-		}
-	}
 	genWasChanged = true;
 	/* eslint-enable */
 	// declaring these variables with var here makes z moves not work; TODO
@@ -1767,10 +1751,41 @@ function loadCustomList(id) {
 }
 
 $(document).ready(function () {
-	var params = new URLSearchParams(window.location.search);
-	var g = GENERATION[params.get('gen')] || 9;
-	$("#gen" + g).prop("checked", true);
-	$("#gen" + g).change();
+
+	
+	gen = 3;
+	GENERATION = calc.Generations.get(gen);
+	genWasChanged = true;
+	/* eslint-enable */
+	// declaring these variables with var here makes z moves not work; TODO
+	pokedex = calc.SPECIES[gen];
+	setdex = SETDEX[gen];
+	randdex = RANDDEX[gen];
+	if ('Aegislash' in randdex) randdex['Aegislash-Shield'] = randdex['Aegislash'];
+	typeChart = calc.TYPE_CHART[gen];
+	moves = calc.MOVES[gen];
+	items = calc.ITEMS[gen];
+	abilities = calc.ABILITIES[gen];
+	clearField();
+	$("#importedSets").prop("checked", false);
+	loadDefaultLists();
+	$(".gen-specific.g" + gen).show();
+	$(".gen-specific").not(".g" + gen).hide();
+	var typeOptions = getSelectOptions(Object.keys(typeChart));
+	$("select.type1, select.move-type").find("option").remove().end().append(typeOptions);
+	$("select.teraType").find("option").remove().end().append(getSelectOptions(Object.keys(typeChart).slice(1)));
+	$("select.type2").find("option").remove().end().append("<option value=\"\">(none)</option>" + typeOptions);
+	var moveOptions = getSelectOptions(Object.keys(moves), true);
+	$("select.move-selector").find("option").remove().end().append(moveOptions);
+	var abilityOptions = getSelectOptions(abilities, true);
+	$("select.ability").find("option").remove().end().append("<option value=\"\">(other)</option>" + abilityOptions);
+	var itemOptions = getSelectOptions(items, true);
+	$("select.item").find("option").remove().end().append("<option value=\"\">(none)</option>" + itemOptions);
+
+	$(".set-selector").val(getFirstValidSetOption().id);
+	$(".set-selector").change();
+
+
 	$("#percentage").prop("checked", true);
 	$("#percentage").change();
 	$("#singles-format").prop("checked", true);
