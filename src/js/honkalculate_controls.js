@@ -63,23 +63,27 @@ $.fn.dataTableExt.oSort['damage48-desc'] = function (a, b) {
 };
 
 function performCalculations() {
-	var attacker, defender, setName, setTier;
-	var selectedTiers = getSelectedTiers();
+	var attacker, defender;
 	var setOptions = getSetOptions();
 	var dataSet = [];
 	var pokeInfo = $("#p1");
+	var theirIVs = Number($("#TheirIVTier").val());
 	for (var i = 0; i < setOptions.length; i++) {
-		if (setOptions[i].id && typeof setOptions[i].id !== "undefined") {
-			setName = setOptions[i].id.substring(setOptions[i].id.indexOf("(") + 1, setOptions[i].id.lastIndexOf(")"));
-			setTier = setName.substring(0, setName.indexOf(" "));
-			if (selectedTiers.indexOf(setTier) !== -1) {
+		if (setOptions[i].bfid && typeof setOptions[i].bfid == "number") {
+			if (inSelectedTiers(setOptions[i].bfid)) {
 				var field = createField();
 				if (mode === "one-vs-all") {
 					attacker = createPokemon(pokeInfo);
 					defender = createPokemon(setOptions[i].id);
+					for (const stat in defender.ivs) {
+						defender.ivs[stat] = theirIVs;
+					}
 				} else {
 					attacker = createPokemon(setOptions[i].id);
 					defender = createPokemon(pokeInfo);
+					for (const stat in attacker.ivs) {
+						attacker.ivs[stat] = theirIVs;
+					}
 					field.swap();
 				}
 				if (attacker.ability === "Rivalry") {
@@ -125,6 +129,77 @@ function performCalculations() {
 	var pokemon = mode === "one-vs-all" ? attacker : defender;
 	if (pokemon) pokeInfo.find(".sp .totalMod").text(pokemon.stats.spe);
 	table.rows.add(dataSet).draw();
+}
+
+function inSelectedTiers(bfid) {
+	var selectedTiers = $('.tiers input:checked').map(function () {
+		return this.id;
+	}).get();
+	for (const tier of selectedTiers) {
+		switch(tier) {
+		case "bf-all":
+			if (0 <= bfid <= 926) {
+				return true;
+			}
+			break;
+		case "fifty-all":
+			if (0 <= bfid <= 871) {
+				return true;
+			}
+			break;
+		case "fifty-one":
+			if (109 <= bfid <= 199) {
+				return true;
+			}
+			break;
+		case "fifty-two":
+			if (155 <= bfid <= 266) {
+				return true;
+			}
+			break;
+		case "fifty-three":
+			if (267 <= bfid <= 371) {
+				return true;
+			}
+			break;
+		case "fifty-four":
+		case "open-one":
+			if (372 <= bfid <= 473) {
+				return true;
+			}
+			break;
+		case "fifty-five":
+		case "open-two":
+			if (474 <= bfid <= 575) {
+				return true;
+			}
+			break;
+		case "fifty-six":
+		case "open-three":
+			if (576 <= bfid <= 675) {
+				return true;
+			}
+			break;
+		case "fifty-seven":
+		case "open-four":
+			if (676 <= bfid <= 777) {
+				return true;
+			}
+			break;
+		case "fifty-eight":
+			if (372 <= bfid <= 871) {
+				return true;
+			}
+			break;
+		case "open-all":
+		case "open-five":
+			if (372 <= bfid <= 926) {
+				return true;
+			}
+			break;
+		}
+	}
+	return false;
 }
 
 function getSelectedTiers() {
@@ -272,7 +347,29 @@ $(".tiers label").mouseup(function () {
 	}
 });
 
-$(".tiers input").change(function () {
+$(".tiers input[type='checkbox']").change(function () {
+	
+	var id = $(this).attr("id");
+
+	if($(this).hasClass("pick-all")) {
+		$(this).closest(".btn-row").find("input[type='checkbox']").prop("checked", $(this).prop("checked"));	
+	}
+
+	if($(this).prop("checked")) {
+		$(this).closest(".tiers").find("input[type='checkbox']").not($(this).closest(".btn-row").find("input[type='checkbox']")).prop("checked", false);
+		if(startsWith(id, "fifty") && $('.level').val() !== "50") {
+			setLevel("50");
+		}
+		if(startsWith(id, "open") && $('.level').val() !== "100") {
+			setLevel("100");
+		}
+	} else {
+		if(!($(this).hasClass("pick-all"))) {
+			$(this).closest(".btn-row").find("input[type='checkbox'].pick-all").prop("checked", false);
+		}
+	}
+
+	/*
 	var type = $(this).attr("type");
 	var id = $(this).attr("id");
 	$(".tiers input").not(":" + type).prop("checked", false); // deselect all radios if a checkbox is checked, and vice-versa
@@ -289,6 +386,7 @@ $(".tiers input").change(function () {
 	if (startsWith(id, "VGC") && $('.level').val() !== "50") {
 		setLevel("50");
 	}
+	*/
 });
 
 function setLevel(lvl) {

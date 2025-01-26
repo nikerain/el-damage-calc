@@ -1548,7 +1548,8 @@ function getSetOptions(sets) {
 						text: pokeName + " (" + setName + ")",
 						id: pokeName + " (" + setName + ")",
 						isCustom: setdex[pokeName][setName].isCustomSet,
-						nickname: setdex[pokeName][setName].nickname || ""
+						nickname: setdex[pokeName][setName].nickname || "",
+						bfid: setdex[pokeName][setName].bfid
 					});
 				}
 			}
@@ -1752,7 +1753,7 @@ function loadCustomList(id) {
 
 $(document).ready(function () {
 
-	
+
 	gen = 3;
 	GENERATION = calc.Generations.get(gen);
 	genWasChanged = true;

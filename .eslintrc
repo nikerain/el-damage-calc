@@ -48,6 +48,7 @@
         "GEN9RANDOMDOUBLESBATTLE": false,
         "GEN9BABYRANDOMBATTLE": false,
         "getSelectedTiers": false,
+        "isSelectedTiers": false,
         "stickyMoves": false,
         "allPokemon": false,
         "loadCustomList": false,

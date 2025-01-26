@@ -325,6 +325,11 @@ th {
     top: -8px;
 }
 
+.btn-rows {
+    display: flex;
+    flex-direction: column;
+}
+
 /* header */
 .move-result-group {
     min-width: 50em;
@@ -351,7 +356,11 @@ th {
     display: inline-block;
     width: 6em;
 }
-.top label, .info-selectors label {
+.top label {
+    display: inline-block;
+    width: 7em;
+}
+.info-selectors label {
     display: inline-block;
     width: 5em;
 }
