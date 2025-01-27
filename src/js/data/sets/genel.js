@@ -1530,8 +1530,8 @@ var SETDEX_EL = {
     "Battle Frontier 6": {"abilities":"Sand Stream","item":"Chesto Berry","nature":"Adamant","evs":{"hp":170,"df":170,"sd":170},"moves":["Earthquake","Rock Slide","Curse","Rest"],"bfid":883},
     "Battle Frontier 7": {"abilities":"Sand Stream","item":"Choice Band","nature":"Adamant","evs":{"hp":255,"at":255},"moves":["Ancient Power","Crunch","Aerial Ace","Hyper Beam"],"bfid":916},
     "Battle Frontier 8": {"abilities":"Sand Stream","item":"Mental Herb","nature":"Adamant","evs":{"hp":255,"at":255},"moves":["Double Team","Ancient Power","Hyper Beam","Focus Punch"],"bfid":917},
-    "Battle Frontier 7": {"abilities":"Sand Stream","item":"Lax Incense","nature":"Mild","evs":{"sa":255,"sp":255},"moves":["Fire Punch","Meteor Mash","Ice Punch","Thunder Punch"],"bfid":918},
-    "Battle Frontier 8": {"abilities":"Sand Stream","item":"Liechi Berry","nature":"Lonely","evs":{"hp":255,"at":255},"moves":["Agility","Substitute","Meteor Mash","Earthquake"],"bfid":919}
+    "Battle Frontier Metagross 7": {"abilities":"Sand Stream","item":"Lax Incense","nature":"Mild","evs":{"sa":255,"sp":255},"moves":["Fire Punch","Meteor Mash","Ice Punch","Thunder Punch"],"bfid":918},
+    "Battle Frontier Metagross 8": {"abilities":"Sand Stream","item":"Liechi Berry","nature":"Lonely","evs":{"hp":255,"at":255},"moves":["Agility","Substitute","Meteor Mash","Earthquake"],"bfid":919}
   },
   "Tyrogue": {
     "Battle Frontier": {"abilities":"Guts","item":"Focus Band","nature":"Docile","evs":{"hp":255,"at":255},"moves":["Mach Punch","Protect","Double Team","Facade"],"bfid":15}
