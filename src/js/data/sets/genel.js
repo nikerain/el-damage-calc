@@ -244,7 +244,7 @@ var SETDEX_EL = {
     "Battle Frontier 2": {"abilities":"Blaze","item":"Scope Lens","nature":"Docile","evs":{"at":170,"sa":170,"sp":170},"moves":["Flamethrower","Sky Uppercut","Slash","Sand Attack"],"bfid":294}
   },
   "Corphish": {
-    "Battle Frontier": {"item":"Mystic Water","nature":"Brave","evs":{"hp":255,"sa":255},"moves":["Crabhammer","Vice Grip","Mud-Slap","Protect"],"bfid":86}
+    "Battle Frontier": {"item":"Mystic Water","nature":"Brave","evs":{"hp":255,"sa":255},"moves":["Crabhammer","Vise Grip","Mud-Slap","Protect"],"bfid":86}
   },
   "Corsola": {
     "Battle Frontier": {"item":"Sitrus Berry","nature":"Impish","evs":{"hp":170,"df":170,"sd":170},"moves":["Bubble Beam","Mirror Coat","Attract","Ancient Power"],"bfid":161}
@@ -257,7 +257,7 @@ var SETDEX_EL = {
     "Battle Frontier 5": {"abilities":"Suction Cups","item":"Lum Berry","nature":"Hardy","evs":{"at":255,"sa":255},"moves":["Recover","Ancient Power","Curse","Ingrain"],"bfid":780}
   },
   "Crawdaunt": {
-    "Battle Frontier 1": {"item":"Persim Berry","nature":"Adamant","evs":{"hp":170,"df":170,"sd":170},"moves":["Bubble Beam","Vice Grip","Knock Off","Ice Beam"],"bfid":249},
+    "Battle Frontier 1": {"item":"Persim Berry","nature":"Adamant","evs":{"hp":170,"df":170,"sd":170},"moves":["Bubble Beam","Vise Grip","Knock Off","Ice Beam"],"bfid":249},
     "Battle Frontier 2": {"item":"Quick Claw","nature":"Adamant","evs":{"hp":255,"sd":255},"moves":["Guillotine","Crabhammer","Ancient Power","Knock Off"],"bfid":354},
     "Battle Frontier 3": {"item":"Choice Band","nature":"Lonely","evs":{"at":255,"sa":255},"moves":["Crunch","Double-Edge","Crabhammer","Brick Break"],"bfid":377}
   },
