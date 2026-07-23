@@ -106,10 +106,6 @@ var SETDEX_RBY = {
   "Arcanine": {
     "NU Offensive": {"moves":["Fire Blast","Body Slam","Hyper Beam","Agility"]}
   },
-  "Poliwag": {
-    "ZU Amnesia Sweeper": {"moves":["Hypnosis","Amnesia","Hydro Pump","Psychic"]},
-    "PU Showdown Usage": {"moves":["Amnesia","Hypnosis","Surf","Psychic"]}
-  },
   "Poliwhirl": {
     "NU Amnesia": {"moves":["Hypnosis","Amnesia","Hydro Pump","Blizzard"]}
   },
@@ -442,6 +438,10 @@ var SETDEX_RBY = {
     "Ubers GGMew (Reflect Sweeper)": {"moves":["Reflect","Swords Dance","Body Slam","Soft-Boiled"]},
     "Ubers Explosive Lure": {"moves":["Thunder Wave","Swords Dance","Body Slam","Explosion"]},
     "Ubers Lutrew / PaRaSiTe Mew (Transform)": {"moves":["Transform","Thunder Wave","Soft-Boiled","Reflect"]}
+  },
+  "Poliwag": {
+    "PU Showdown Usage": {"moves":["Amnesia","Hypnosis","Surf","Psychic"]},
+    "ZU Showdown Usage": {"moves":["Amnesia","Hypnosis","Surf","Psychic"]}
   },
   "Wartortle": {
     "ZU Showdown Usage": {"moves":["Blizzard","Hydro Pump","Body Slam","Surf"]}
