@@ -4,7 +4,7 @@ var SETDEX_RBY = {
     "NU Sleeper": {"moves":["Sleep Powder","Razor Leaf","Body Slam","Hyper Beam"]},
     "PU Sleeper": {"moves":["Sleep Powder","Razor Leaf","Body Slam","Hyper Beam"]},
     "1v1 SubSeed": {"moves":["Razor Leaf","Toxic","Leech Seed","Substitute"]},
-    "UU Showdown Usage": {"moves":["Sleep Powder","Razor Leaf","Body Slam","Swords Dance"]}
+    "UU Showdown Usage": {"moves":["Razor Leaf","Sleep Powder","Body Slam","Swords Dance"]}
   },
   "Charmeleon": {
     "ZU Mixed Attacker": {"moves":["Fire Blast","Slash","Body Slam","Counter"]}
@@ -12,8 +12,7 @@ var SETDEX_RBY = {
   "Charizard": {
     "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Earthquake","Slash"]},
     "NU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Earthquake","Fire Blast"]},
-    "NU Mixed Attacker": {"moves":["Fire Blast","Slash","Earthquake","Body Slam"]},
-    "UU Showdown Usage": {"moves":["Earthquake","Fire Blast","Swords Dance","Hyper Beam"]}
+    "NU Mixed Attacker": {"moves":["Fire Blast","Slash","Earthquake","Body Slam"]}
   },
   "Blastoise": {
     "NU Bulky Attacker": {"moves":["Surf","Body Slam","Seismic Toss","Blizzard"]}
@@ -322,6 +321,7 @@ var SETDEX_RBY = {
   "Pinsir": {
     "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Slash","Submission"]},
     "PU Swords Dance": {"moves":["Swords Dance","Slash","Hyper Beam","Seismic Toss"]},
+    "UU Showdown Usage": {"moves":["Swords Dance","Hyper Beam","Seismic Toss","Body Slam"]},
     "Tradebacks OU Showdown Usage": {"moves":["Bind","Hyper Beam","Swords Dance","Slash"]}
   },
   "Tauros": {
@@ -347,8 +347,7 @@ var SETDEX_RBY = {
     "ZU lol": {"moves":["Transform"]}
   },
   "Vaporeon": {
-    "Tradebacks OU Growth": {"moves":["Growth","Surf","Acid Armor","Rest"]},
-    "UU Showdown Usage": {"moves":["Rest","Surf","Acid Armor","Ice Beam"]}
+    "Tradebacks OU Growth": {"moves":["Growth","Surf","Acid Armor","Rest"]}
   },
   "Jolteon": {
     "OU Offensive": {"moves":["Thunder Wave","Thunderbolt","Double Kick","Rest"]},
@@ -377,8 +376,7 @@ var SETDEX_RBY = {
   },
   "Kabutops": {
     "OU Standard": {"moves":["Swords Dance","Slash","Hyper Beam","Surf"]},
-    "NU Bulky Attacker": {"moves":["Slash","Surf","Swords Dance","Hyper Beam"]},
-    "UU Showdown Usage": {"moves":["Hyper Beam","Swords Dance","Slash","Hydro Pump"]}
+    "NU Bulky Attacker": {"moves":["Slash","Surf","Swords Dance","Hyper Beam"]}
   },
   "Aerodactyl": {
     "Ubers Defensive Wall": {"moves":["Reflect","Rest","Double-Edge","Fire Blast"]},
