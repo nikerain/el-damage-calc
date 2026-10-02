@@ -55,7 +55,8 @@ var SETDEX_RBY = {
     "NU Mixed Attacker": {"moves":["Earthquake","Blizzard","Thunderbolt","Substitute"]},
     "PU Mixed Attacker": {"moves":["Earthquake","Blizzard","Thunderbolt","Substitute"]},
     "Tradebacks OU Lovely Kiss": {"moves":["Lovely Kiss","Blizzard","Thunderbolt","Earthquake"]},
-    "Tradebacks OU Amnesia": {"moves":["Amnesia","Blizzard","Thunderbolt","Earthquake"]}
+    "Tradebacks OU Amnesia": {"moves":["Amnesia","Blizzard","Thunderbolt","Earthquake"]},
+    "OU Showdown Usage": {"moves":["Earthquake","Blizzard","Thunderbolt","Surf"]}
   },
   "Clefable": {
     "OU Status Spreader": {"moves":["Mega Kick","Hyper Beam","Blizzard","Thunder Wave"]},
@@ -161,7 +162,6 @@ var SETDEX_RBY = {
   "Rapidash": {
     "UU Offensive": {"moves":["Fire Blast","Body Slam","Hyper Beam","Agility"]},
     "Tradebacks OU Sleeper": {"moves":["Hypnosis","Fire Spin","Fire Blast","Hyper Beam"]},
-    "NU Showdown Usage": {"moves":["Fire Blast","Body Slam","Fire Spin","Hyper Beam"]},
     "PU Showdown Usage": {"moves":["Fire Blast","Body Slam","Hyper Beam","Fire Spin"]}
   },
   "Slowpoke": {
@@ -220,7 +220,7 @@ var SETDEX_RBY = {
     "OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Body Slam","Crabhammer"]},
     "PU Swords Dance": {"moves":["Swords Dance","Body Slam","Hyper Beam","Crabhammer"]},
     "Tradebacks OU Swords Dance": {"moves":["Swords Dance","Hyper Beam","Body Slam","Crabhammer"]},
-    "NU Showdown Usage": {"moves":["Hyper Beam","Swords Dance","Body Slam","Crabhammer"]}
+    "NU Showdown Usage": {"moves":["Crabhammer","Body Slam","Hyper Beam","Swords Dance"]}
   },
   "Electrode": {
     "Ubers Offensive": {"moves":["Thunderbolt","Thunder Wave","Flash","Explosion"]},
@@ -347,7 +347,8 @@ var SETDEX_RBY = {
     "ZU lol": {"moves":["Transform"]}
   },
   "Vaporeon": {
-    "Tradebacks OU Growth": {"moves":["Growth","Surf","Acid Armor","Rest"]}
+    "Tradebacks OU Growth": {"moves":["Growth","Surf","Acid Armor","Rest"]},
+    "OU Showdown Usage": {"moves":["Rest","Surf","Ice Beam","Sand Attack"]}
   },
   "Jolteon": {
     "OU Offensive": {"moves":["Thunder Wave","Thunderbolt","Double Kick","Rest"]},
@@ -411,8 +412,7 @@ var SETDEX_RBY = {
     "OU Standard": {"moves":["Fire Blast","Hyper Beam","Agility","Fire Spin"]},
     "UU Agility": {"moves":["Agility","Fire Blast","Double-Edge","Hyper Beam"]},
     "1v1 Mixed Attacker": {"moves":["Fire Blast","Toxic","Rest","Reflect"]},
-    "Tradebacks OU AgiliSpin": {"moves":["Agility","Fire Spin","Fire Blast","Hyper Beam"]},
-    "NU Showdown Usage": {"moves":["Fire Blast","Agility","Fire Spin","Hyper Beam"]}
+    "Tradebacks OU AgiliSpin": {"moves":["Agility","Fire Spin","Fire Blast","Hyper Beam"]}
   },
   "Dragonair": {
     "OU Wrap": {"moves":["Thunder Wave","Wrap","Blizzard","Thunderbolt"]},

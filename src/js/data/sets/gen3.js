@@ -1464,7 +1464,6 @@ var SETDEX_ADV = {
   },
   "Glalie": {
     "UU Spikes": {"ability":"Inner Focus","item":"Leftovers","nature":"Jolly","ivs":{"at":30,"sa":30},"evs":{"hp":252,"at":4,"sp":252},"moves":["Spikes","Explosion","Earthquake","Hidden Power Grass"]},
-    "OU Showdown Usage": {"ability":"Inner Focus","item":"Salac Berry","nature":"Calm","evs":{"hp":252,"sd":216,"sp":40},"moves":["Spikes","Explosion","Ice Beam","Taunt"]},
     "RU Showdown Usage": {"ability":"Inner Focus","item":"Leftovers","nature":"Jolly","evs":{"hp":252,"sd":4,"sp":252},"moves":["Spikes","Explosion","Taunt","Ice Beam"]}
   },
   "Sealeo": {
